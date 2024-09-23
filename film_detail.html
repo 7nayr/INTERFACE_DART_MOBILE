@@ -1,0 +1,154 @@
+<ons-page id="page_film_detail">
+    <style>
+        #film-title-placeholder {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .film-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .film-header h2 {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .film-header p {
+            margin-right: 10px; 
+            font-size: 25px;
+            color: gray;
+            margin-left: 10px;
+        }
+
+        #film-description {
+            padding-left: 40px;
+            padding-right: 40px;
+            text-align: justify;
+            font-size: 25px;
+        }
+
+        .film-body h2 {
+            padding-left: 40px;
+        }
+
+        .content-mid {
+            font-size: 22px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: #c0c0c0;
+            position: relative;
+            margin: 20px 0; 
+        }
+
+        .content-mid::before,
+        .content-mid::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            right: 0;
+            height: 1.5px; 
+            background-color: black;
+        }
+
+        .content-mid::before {
+            top: -1px; 
+        }
+
+        .content-mid::after {
+            bottom: -1px; 
+        }
+
+        .content-mid .film-info {
+            margin: 10px 0;
+            display: flex;
+            align-items: center; 
+        }
+
+        #film-genre {
+            font-size: 22px;
+            text-align: center;
+        }
+
+        #film-duree {
+            margin-right: 2px;
+            margin-left: 20px;
+        }
+
+        #median-point {
+            margin-left: 12px;
+            font-weight: bold;
+        }
+
+        .flex-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .star {
+            --star-color: gold;
+            --star-color-empty: #ddd;
+            width: 32px;
+            height: 32px;
+            margin: 0 2px;
+        }
+
+        .star-path-filled {
+            fill: gold;
+           
+        }
+
+        .star-path-empty {
+            fill: var(--star-color-empty);
+            mask: url(#star-mask) no-repeat center/100%;
+        }
+        #film-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+
+    <ons-toolbar>
+        <div class="left"><ons-back-button></ons-back-button>Film</div>
+        <div class="center" id="film-title-placeholder"></div>
+    </ons-toolbar>
+    <div class="content">
+        <div class="film-header">
+            <h2 id="film-title-large"></h2>
+            <p id="film-year"></p>
+        </div>
+
+
+
+<div class="rating">
+    <svg class="star" viewBox="0 0 24 24">
+        <path class="star-path-filled" d="M12 2 L14.09 8.73 L22 9.27 L16.5 14.43 L18.18 22 L12 17.77 L5.82 22 L7.5 14.43 L2 9.27 L9.91 8.73 Z"></path>
+    </svg>
+
+</div>
+
+
+
+        <div class="film-body">
+            <div class="bandeau-gris">
+                <div id="film-details" style="text-align: center;">
+                    <p><strong></strong> <span id="film-date"></span> &bull; <strong></strong> <span id="film-duration"></span></p>
+                    <p><strong></strong> <span id="film-genre"></span></p>
+                </div>
+            </div>
+            <p id="film-slogan"></p> 
+            <h2>Résumé</h2>
+            <p id="film-description"></p>
+        </div>
+
+        <img id="film-image" class="film-image" src="" alt="Image du film">
+
+    </div>
+</ons-page>
